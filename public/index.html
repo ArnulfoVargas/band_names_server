@@ -21,9 +21,10 @@
             console.log("Connection lost")
         })
 
-        socket.emit('msg', {nombre: "Raul"})
-
-        socket.on('msg', msg => {console.log(msg)})
+        socket.on("active-bands", payload => {
+            console.clear();
+            console.table(payload);
+        })
     </script>
 </body>
 </html>
